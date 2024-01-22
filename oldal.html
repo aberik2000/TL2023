@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Témalabor beszámoló dokumentum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#bevezeto">Bevezető</a></li>
+            <li><a href="#technologiak">Használt technológiák</a></li>
+            <li><a href="#munkafolyamat">Munkafolyamat</a></li>
+            <li><a href="#feladatlebontas">Feladatlebontás</a></li>
+            <li><a href="#osszegzes">Összegzés</a></li>
+        </ul>
+    </nav>
+
+    <section id="bevezeto">
+        <h1>Témalabor projektfeladat</h1>
+        <h2>Bevezető</h2>
+        <p>A mi projektünk egy komplex Power BI projekt végig vitele. Egy adott oldalról dolgozunk, ahol több, már 
+            előre elkészített táblák alapján adat vizualizációs folyamatokat készítünk el, egészítünk ki további számításokkal, 
+            majd ezeket dashboard formájában vizualizáljuk.</p>
+        <h2>Csapattagok</h2>
+            <ul>
+                <li>Abért Erik</li>
+                <li>Farkas Mirjam</li>
+                <li>Lénárt Ádám</li>
+                <li>Szántó Gergő</li>
+            </ul>
+        <p>A témát a <b> Cosmo Consult KFT. </b>-től kaptuk, a témavezetőnk <b> Kakas Ádám</b> volt, aki a tanulási szakaszban 
+            hetente 1-2 órás meetingeket tartott nekünk. </p>
+        </section>
+
+    <section id="technologiak">
+        <h2>Használt technológiák</h2>
+        <h3><d>Kaggle.com</d></h3>
+        <p>Az adatokat a <i>kaggle.com</i>-ról szereztük be, az Amazonnak az eladási adataival foglalkozunk. 
+            Az alap architektúrája egy hópehely architektúra volt, amit csillagséma architektúrára alakítottunk át 
+            a jobb átláthatóság és a könnyebb használhatóság miatt.</p>    
+
+        <img src="Kepek/eredeti.png" alt="Eredeti"><br/>
+        <img src="Kepek/sajat.jpg" alt="Sajat"><br/>
+    </section>
+
+    <section>
+        <h3>Planetscale</h3>
+        
+            <p>A munkafolyamat egy pontján kiderült, hogy a planetscale API-ja még béta verzióban van, és nem támogatja a 
+            Power BI-jal való kapcsolatot, ezért ezzel nem dolgoztunk tovább. Létrehoztunk service tokeneket, majd egyesével 
+            minden tokennek beállítottuk a jogosultságát, amivel power bi-ból tudunk csatlakozni a feltöltött adatbázishoz, 
+            de nem akart működni Power Bi-on belül.</p>  
+                <img src="Kepek/pl1.png" alt="Planetscale"><br/>
+                <img src="Kepek/pl2.png" alt="Planetscale"><br/>        
+            <p>Jobban utána olvastunk, hogy miért nem működik és láttuk, hogy az Api bétában van.</p>
+                <img src="Kepek/pl3.png" alt="Planetscale"><br/> 
+    </section>
+
+    <section>
+        <h3>Docker</h3>
+        <p>Feltöltöttük a dockerbe az adattábláinkat, hogy innen tudjuk futtatni. Felhasználóval, jelszóval tudunk csatlakozni 
+            a Power BI-on belül. Erre azért volt szükség, hogy könnyen hozzá férjünk az adatokhoz, és ne kelljen mindig letölteni. </p>    
+
+        <img src="Kepek/docker.png" alt="Docker">
+    </section>
+
+    <section>
+        <h3>Power BI Desktop</h3>
+        <h4>Verzió: 2.124.1554.0 64-bit</h4>
+        <p>A projectünk fő eleme a Power BI Destop. Az időnk majdnem egészében ezen az appon dolgoztunk, táblákat kapcsoltunk, 
+            adat vizualizációkat készítettünk. </p>    
+
+        <img src="Kepek/bi.png" alt="PowerBI">
+    </section>
+
+    <section>
+        <h3>Microsoft Teams</h3>
+        <p>A konzulensünkkel való heti konzultációkat Microsoft Teaams-en tartottuk, 
+            az itt felvett órák sokat segítettek nekünk a további munkánkban. </p>    
+
+        <img src="Kepek/teams.png" alt="Microsoft Teams">
+    </section>
+
+    <section>
+        <h3>Discord</h3>
+        <p>Az online kapcsolattartás miatt került bele ez az ingyenes platform a listánkba, többször dolgoztunk Discord-on a munkánk során. 
+            Azért ezt a platformot választottuk a fő kapcsolattartásunk eszközéül, mert egyszerre többen is meg tudjuk osztani a képernyőnket, 
+            ezzel segítve a többiek- illetve a saját munkánkat. </p>    
+
+        <img src="Kepek/dc.png" alt="Discord">
+    </section>
+
+    <section>
+        <h3>Outlook, Gmail</h3>
+        <p>A konzulensünkkel való meetingek megbeszélésére, illetve kapcsolat 
+            tartáshoz szükséges kommunikációra használtuk. </p>    
+    </section>
+
+    <section id="munkafolyamat">
+        <h2>Munkánk folyamata</h2>
+        <h3>Docker használata</h3>
+        <p>A Docker konténerek futtatására szolgál. Ezek a konténerek arra szolgálnak, hogy több szoftvert és/vagy szoftvercsomagot 
+            egymástól elkülönítve, a nekik megfelelő környezetben működtessük. A konténerek image-kből hozhatók létre. 
+            Az image egy többször felhasználható minta.</br>
+            Legelőször a Dockerből betöltöttük a szükséges adatainkat.
+            Ezt úgy kaptok meg, hogy Visual Studio Code-ba elindítottuk az Image-nkat (elindítottuk a szervert)
+        </p>    
+        <img src="Kepek/docker2.png" alt="Docker">
+        <p>Miután betöltött a szerverünk létrehoztuk a tábláinkat, feltöltöttük bele az adatokat.</p>
+        <img src="Kepek/dock1.png" alt="Docker"></br>
+        <img src="Kepek/dock2.png" alt="Docker"></br>
+        <p>Ezután csatlakozunk a serverhez Power BI-ban, majd megadjuk a Database-t amivel dolgozzon.</p>
+        <img src="Kepek/docker3.png" alt="Docker">
+        <p>Majd bejelentkezünk az adatbázisunkba.</p>
+        <img src="Kepek/docker4.png" alt="Docker">
+        <p>És ezután betöltjük a tábláinkat és kezdődhet az adattisztítás és kapcsolatok kialakítása, 
+            erre csak az első belépéskor van szükség.</p>
+        <img src="Kepek/docker5.png" alt="Docker">
+    </section>
+
+    <section>
+        <h3>Adatok tisztítása</h3>
+        <p>Az adattisztítási folyamat nagyon fontos mivel, ez készíti elő az adatainkat az elemzésre. Hogyha nincsenek jól előkészítve, 
+            hiányos, pontatlan grafikonokat, táblázatokat kapunk, rosszabb esetben értelmezhetetlen lesz az egész.
+            Szerencsére a Power BI-ba bele van építve a Power Query amelynek együttese hatékony grafikai környezetet 
+            biztosít az adatok tisztításához és előkészítéséhez. A Power Query egy adat átalakítási és adat-előkészítési motor. 
+            A Power Query-t nem csak a Power BI használja, több más Microsoft app is alkalmazza, pl.: Microsoft Excel.
+            </p>    
+
+        <img src="Kepek/tisztitas1.png" alt="Tisztítás"></br>
+        <p>Beállítottuk a táblák oszlopait, és kitöröltük az adatokat, amik nem kellenek</p>
+        <img src="Kepek/tiszt3.png" alt="Tisztítás"></br>
+    </section>
+
+    <section>
+        <h3>Adatok modellben történő leképezése</h3>
+        <p>Az adatmodellezés szorosan összefügg az adattisztítással. A legfontosabb célja, hogy egy olyan adatbázis alapjait teremtse meg, amely képes nagy adatmennyiségek gyors betöltésére, 
+            lekérdezésére és elemzésére.</br>
+            A hatékony adatmodellezés megköveteli az adatok, adat táblák közötti kapcsolatot. Minél jobban ki van építve a táblakapcsolat, annál pontosabb adatokat kapunk a lekérdezéseinkhez.
+            Az adattábláinkat csillagséma architektúra alapján kötöttük össze, ami úgy épül fel, hogy az összes tábla egy központi táblához van kötve és azon keresztül kommunikálnak egymással az adatok.</br>
+            A táblákat a képen látható módon összekötöttük, az első képen a grafikai környezetben látható, a másodi kébópen pedig Natív Quary-ben.</p>
+            <img src="Kepek/tiszt1.png" alt="Tisztítás"></br>
+            <img src="Kepek/tiszt2.png" alt="Tisztítás"></br>
+            <p>Kezdetben így nézett ki a sémánk:</p>
+            <img src="Kepek/sema1.png" alt="Kezdeti"></br>
+            <p>Ez pedig a végleges kialakítás, amikkel a továbbiakban dolgoztunk.</p>
+            <img src="Kepek/sema2.png" alt="Kezdeti"></br>
+    </section>
+
+    <section>
+        <h3>Adatmodellre történő Power BI riportok, Dashboard-ok létrehozása</h3>
+        <p>A Power BI-ban több féle képen lehet riportot, dashboard-ot létrehozni. Ennek talán az egyik legegyszerűbb módja a már meglévő adatmodellünkre 
+            ráhúzni a riportokat, dashboard-okat, amiket vizualizálunk. Az elkészült dashboard-ok részletesebb elemeit szétszedtük, 
+            és ezekből riportokat készítettünk.</p></br>    
+        <p>Kezdeti tábláink így nézek ki a tanulási fázisban:</p>
+        <img src="Kepek/image12.png" alt="Kezdeti"></br>
+        <p>Majd ahogy haladtunk és egyre több mindent tudtunk:</p>
+        <img src="Kepek/image13.png" alt="Kezdeti"></br>
+        <h3>A végleges vizualizációk</h3>
+        <p>Alapvető adatokat a kártyákon jelenítjük meg:</p>
+            <ol>
+                <li>Teljes bevétel</li>
+                <li>Megrendelések száma</li>
+                <li>Eladott mennyiség</li>
+                <li>Átlagos eladás egy nap</li>
+                <li>Átlagos érték/rendelés</li>
+            </ol>
+            <img src="Kepek/kartya.png" alt="Kezdeti"></br>
+            <p>Stacked diagram, ami egy adott időszak alatt eladott termékek hozamát mutatja:</p>
+            <img src="Kepek/stacked.png" alt="Stacked"></br>
+            <p>Ez a térkép azt mutatja, hogy honnan jöttek a rendelések:</p>
+            <img src="Kepek/terkep.png" alt="Terkep"></br>
+            <p>Ez az oszlopdiagram az egyes országokban eladott áruk értékét fejezi ki:</p>
+            <img src="Kepek/oszlop.png" alt="Oszlop"></br>
+            <p>A kördiagram a kategóriák eloszlását mutatja:</p>
+            <img src="Kepek/kordia.png" alt="Kordiagram"></br>
+            <p>A havi lebontáshoz, egy listázó slicer:</p>
+            <img src="Kepek/slicer.png" alt="Slicer"></br>
+            <p>Ezen a térképen pedig a buborékok nagysága jelzi az eladott termékek mennyiségét és értékét:</p>
+            <img src="Kepek/bubi.png" alt="Bubi"></br>
+            <p>Egy kész oldal:</p>
+            <img src="Kepek/keszoldal.png" alt="Kesz"></br>
+
+    </section>
+
+    <section>
+        <h3>Riportok mobilos nézetben</h3>
+        <p>
+            A mobilos nézet kialakításához a már meglévő vizualizációkat használtuk fel, kisebb módosításokkal megjelenítésben. 
+            Így sikerült kialakítanunk egy könnyen megfogható és értelmezhető mobilbarát felületet, ami ugyanúgy teljesértékű kimutatásokat mutat be, mint az asztali verzió.<br/>
+            Így néz ki a szerkesztő:</p>    
+            <img src="Kepek/mobilos1.png" alt="Mobil"></br>
+            <p>Így néz ki telefonos nézetben.</p>
+            <img src="Kepek/mobilos2.png" alt="Mobil"></br>
+            <img src="Kepek/mobilos3.png" alt="Mobil"></br>
+            <img src="Kepek/mobilos4.png" alt="Mobil"></br>
+    </section>
+
+    <section>
+        <h3>Valuták kezelése API segítségével</h3>
+        <p>
+            Az api-s pénzváltóhoz external tools-t használtunk, amibe külön le lett töltve a tabulator editor 3. 
+            Ebben hoztuk létre a segédtáblákat és állítottuk be a pénzváltót DAX kódok segítségével.</br>
+            Az első próbálkozásunk, verziónk még api nélkül volt. Így nézett ki a currency váltó.</p>    
+
+        <img src="Kepek/valuta1.png" alt="Valuta"></br>
+        <img src="Kepek/valuta2.png" alt="Valuta"></br>
+        <p>Ez a kódrészlet szolgál arra, hogy ha változtatunk a pénznemen, akkor változzon a hozzá illő szimbólumra.</p>
+        <img src="Kepek/valuta3.png" alt="Valuta"></br>
+        <p>Itt beállítjuk, hogy a quantity ne változzon csak az eladási adatok szorzódjanak</p>
+        <img src="Kepek/valuta4.png" alt="Valuta"></br>
+        <p>Ez pedig a szimbólumok formázása a kiválasztott pénznemhez.</p>
+        <img src="Kepek/valuta5.png" alt="Valuta"></br>
+        <p>Így néz ki a végleges api-s pénzváltónk</p>
+        <img src="Kepek/valuta6.png" alt="Valuta"></br>
+        <p></p>DAX kódok segítségével végeztük a számításokat a pénzváltáshoz, amiből néhány részlet a következő képeken látható.</p>
+        <img src="Kepek/valuta7.png" alt="Valuta"></br>
+        <img src="Kepek/valuta8.png" alt="Valuta"></br>
+        <img src="Kepek/valuta9.png" alt="Valuta"></br>
+
+    </section>
+
+    <section id="feladatlebontas">
+        <h2>Feladatok heti lebontása</h2>
+        <p>Egy adott héten 4-10 órát fordítottunk a projektünkre. Az utolsó két hét sűrűbb volt, mint a többi.
+            Heti szintre lebonta az alábbiakat csináltuk:
+        </p>    
+        <ol>
+            <li>Ismerkedés a Power BI-al</li>
+            <li>Adathalmaz ötletek átbeszélése, Tény entitások Bemutatása</li>
+            <li>Szerepek/szerepkörök definiálása, Adathalmaz kijelölése</li>
+            <li>Branchek létrehozása, majd a planetscale sajnos elvitte az időnk nagy részét</li>
+            <li>Modellnézet, kapcsolatok a táblák között, Maps, Vizualizációk alkalmazása, Táblák oszlopainak beállítása</li>
+            <li>Projekthét/ szünet</li>
+            <li>További vizualizációk alkalmazása, átbeszélése, Dinamikus formázás, Függvények létrehozása tanulása</li>
+            <li>Félévközi bemutató</li>
+            <li>Továbbiak átbeszélése, ezen a ponton ért véget a tanulási szakasz, innen kezdtük a tényleges munkát</li>
+            <li>Tanulás/szünet</li>
+            <li>Karácsonyozás/szünet</li>
+            <li>Újra átnéztük a munkánkat és elkezdtük kialakítani az egyéni riportokat</li>
+            <li>Egyéni riportok kialakítása, függvények átnézése</li>
+            <li>Dashboard végleges vizualizációja, Valuták kezelése API segítségével, interaktív jelentések bővítése</li>
+            <li>Valuták kezelése API segítségével, Utolsó simítások, Weblap elkészítése</li>
+        </ol>      
+        <br/>
+        <img src="Kepek/gantt.png" alt="Gantt diagram">
+    </section>
+
+    <section id="osszegzes">
+        <h2>Összegzés</h2>
+        <p>A projektünk fő célja a Power BI megismerése, hozzá kapcsolódó, segítő technikák alkalmazása (pl.:planetscale, ami végül kudarcba fulladt), 
+            megismerése, amit a későbbiekben máshoz is tudunk alkalmazni. A munkánk utánozza, bemutatja a való életben is használatos Power BI projektet. 
+            Úgy készíttettük a kimutatásainkat, mintha egy partnertől kaptunk volna egy megrendelést, hogy készítsünk neki átlátható, összehasonlítható táblákat. 
+            Ezzel rengeteget fejlődtünk és tanultunk, amit a későbbi munkánk, tanulmányaink során fogunk tudni kamatoztatni.</p>
+    </section>  
+
+</body>
+</html>
